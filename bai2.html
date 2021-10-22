@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2 ><i id="demo"></i></h2>
+<script>
+    let total = 0;
+    let count = 0;
+    function display() {
+        while (count<25) {
+        for (let i = 0; i < 100; i++) {
+            let check = true;
+            if (i<2) {
+                continue;
+            }else {
+                for (let j = 2; j < i - 1; j++) {
+                    if (i % j === 0) {
+                        check = false;
+                        break;
+                    }
+                }
+            }if (check) {
+                total+=i;
+                count++;
+            }
+        }document.getElementById('demo').innerText= 'Tổng 25 số nguyên tố đầu tiên là : ' + total;
+    }}
+    display()
+</script>
+</body>
+</html>
